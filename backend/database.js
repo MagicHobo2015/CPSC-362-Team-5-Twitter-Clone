@@ -6,6 +6,7 @@ dotenv.config();
 
 // this will contain all the info node needs to connect to the database.
 // it will be used every time you interact with it.
+// ************ using this means you need to have a .env file with this info in the dir.
 const pool = mysql.createPool({
 	host: process.env.MYSQL_HOST,
 	user: process.env.MYSQL_USER,
@@ -13,25 +14,28 @@ const pool = mysql.createPool({
 	database: process.env.MYSQL_DATABASE
 }).promise()
 
+/*********************ADD DATABASE FUNCTIONS HERE **********************************************/
+
 // this will just return one row of info
-async function getTweet(id) {
+export async function getTweet(id) {
 	const [row] = await pool.query(`
-	SELECT * FROM users 
-	WHERE id = ?`, [id])
+	SELECT * FROM tweets 
+	WHERE tweetID = ?`, [id])
 	return row[0]
 }
 
 // this adds a tweet to the database, needs to be adjusted to what the tweet model actually contains
-async function createTweet( name, email ) {
+export async function createTweet( content ) {
 	const [result] = await pool.query(`
-	INSERT INTO users (name, email) 
-	VALUES ( ?, ?)`, [name, email])
+	INSERT INTO tweets(content)
+	VALUES(?)`, content);
+
+	// so that will insert the tweet and sends back an array with some info
+	// we are gonna take one of those and use it to get the whole tweet back.
+	const resRet = getTweet(result.insertId);
+	return resRet;
 }
 
-// get the tweet
-const idunno = getTweet(6);
-// idunno returns a promise so you call the then method
-idunno.then(response => {console.log(response)});
-
-
+/*
+ **************************************** END DATABASE FUNCTIONS **********************************/
 
