@@ -1,5 +1,5 @@
 import React from 'react';
-
+import axios from 'axios';
 class TweetInput extends React.Component {
     constructor(props) {
         super(props);
@@ -18,6 +18,13 @@ class TweetInput extends React.Component {
     }
 
     handleSubmit(event) {
+        axios({
+            method: 'post' ,
+            url: 'http://172.119.117.0:80/createTweet',
+            data:{
+                "content": this.state.tweet
+            }
+        });
         alert(this.state.aName + ' tweeted ' + this.state.tweet);
         event.preventDefault();
     }
