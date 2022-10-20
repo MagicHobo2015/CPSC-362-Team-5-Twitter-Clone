@@ -1,5 +1,6 @@
 // need to import it to use it
 import express from 'express';
+import cors from 'cors';
 
 // ************************************************* import stuff you made here
 import { createTweet, getTweet } from './database.js';
@@ -8,6 +9,10 @@ import { createTweet, getTweet } from './database.js';
 
 // create the express app
 const app = express();
+// const cors = require('cors');
+app.use(cors({
+	origin: '*'
+}));
 // so we can accept json stuff
 app.use(express.json());
 // were gonna keep the port here so its easy to change

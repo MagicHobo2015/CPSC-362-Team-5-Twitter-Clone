@@ -1,0 +1,7 @@
+# this needs to be the ip address of mysql host. i think port defaults to 3306
+MYSQL_HOST='group5'
+# eventually we are going to create a user just for this app.
+MYSQL_USER='josh'
+MYSQL_PASSWORD='aa201544'
+# the database we are using
+MYSQL_DATABASE='twitterClone'
