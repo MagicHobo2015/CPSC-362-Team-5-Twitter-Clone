@@ -1,16 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import TweetInput from './TweetInput'
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <div>Hello world!</div>,
+  },
+]);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <React.Fragment>
     <App />
-    <TweetInput />
-  </React.Fragment>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
