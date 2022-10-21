@@ -1,1 +1,5 @@
+# ignore the node_modules, so you have to install yourself
 node_modules
+
+# keeping things secure by not hardcoding this stuff.
+.env
