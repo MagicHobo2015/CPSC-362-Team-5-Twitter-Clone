@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+axios.defaults.baseURL = 'http://127.0.0.1:8080/'
 class TweetInput extends React.Component {
     constructor(props) {
         super(props);
@@ -20,7 +21,7 @@ class TweetInput extends React.Component {
     handleSubmit(event) {
         axios({
             method: 'post' ,
-            url: 'http://172.119.117.0:80/createTweet',
+            url: '/createTweet',
             data:{
                 "content": this.state.tweet
             }
