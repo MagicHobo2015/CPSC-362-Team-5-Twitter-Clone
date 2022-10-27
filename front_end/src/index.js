@@ -3,6 +3,9 @@ import { createRoot } from 'react-dom/client';
 
 // this isnt working right now..
 import "./index.css";
+import { TweetOut } from "./tweetDisplay";
+import "./tweetDisplay.css";
+
 
 // couple variables to make stuff shorter at the end. also this is the react 18 way to do this
 const container = document.getElementById('root')
@@ -20,6 +23,7 @@ function Tweet() {
     </div>
   );
 }
+
 
 function Avatar() {
   return (
@@ -48,4 +52,11 @@ function NameWithHandle() {
 
 const Time = () => <span className="time">3h ago</span>;
 
-root.render(<Tweet />);
+root.render(
+  <React.Fragment>
+  <TweetOut name = "Tony" text = "I like Pizza" time = "10/23/2022"/>
+  <TweetOut name = "Ben" text = "Cookies" time = "10/26/2022"/>
+  <TweetOut name = "Josh" text = "RIPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP" time = "10/24/2022"/>
+  </React.Fragment>);
+
+//tweetOut tweeter="Tony" tweet="I like Pizza" time = "10/23/2022" 
