@@ -10,28 +10,28 @@ good.
 	height: 48px;
 	border-radius: 5px;
 	margin-right: 10px;
-  }
-  .name {
+}
+.name {
 	font-weight: bold;
 	margin-bottom: 0.5em;
 	margin-right: 0.3em;
-  }
-  .handle {
+}
+.handle {
 	color: #8899a6;
 	font-size: 13px;
-  }
+}
 
-  .time {
+.time {
 	padding-left: 0.3em;
 	color: #8899a6;
-  }
-  .time::before {
+}
+.time::before {
 	content: "\00b7";
 	padding-right: 0.3em;
-  }
+}
 
 .Tweet {
-	border: 1px solid #cccccc;
+	border: 13px solid #3928cf;
 	width: 564px;
 	min-height: 68px;
 	padding: 10px;
@@ -39,4 +39,4 @@ good.
 	font-family: "Helevetica", arial, sans-serif;
 	font-size: 14px;
 	line-height: 18px;
-  }
+}

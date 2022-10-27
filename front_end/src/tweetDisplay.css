@@ -1,0 +1,29 @@
+.tweetBox {
+    border: 1px solid #28a8cf;
+	width: auto;
+	height: auto;
+	padding: 10px;
+	font-size: 14px;
+}
+.tweetName{
+	font-size: 14px;
+	padding:.2px;
+}
+.tweetText{
+	font-size:12px;
+}
+.tweetTime{
+	font-size: 10px;
+	text-decoration-color: gray;
+	text-align: right;
+}
+.tweetAt{
+	color: #8899a6;
+	font-size: 13px;
+}
+.avatar {
+	width: 48px;
+	height: 48px;
+	border-radius: 5px;
+	margin-right: 10px;
+}
